@@ -10,15 +10,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(CMakeDependentOption)
 set(MAIN_PROJECT_NAME SoftRenderer)
 
-
-
-option(BUILD_PLAYER "Build Player executable" OFF)
-
-if (!BUILD_PLAYER)
+if (NOT BUILD_PLAYER)
     message(FATAL_ERROR "no BUILD_PLAYER OPTION")
+else()
+	message(STATUS "BUILD_PLAYER option detected!")
 endif ()
 
 project(${MAIN_PROJECT_NAME})
+
+option(BUILD_PLAYER "Build Player executable" OFF)
 
 set(PLATFORM_WINDOWS TRUE)
 
